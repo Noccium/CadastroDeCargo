@@ -1,0 +1,5 @@
+C:\Users\lucas.sousa\Documents\Visual Studio 2010\Projects\CadastroDeCargo\binarios\LG.ProgramaDeEstagio.CadastroDeCargo.dll
+C:\Users\lucas.sousa\Documents\Visual Studio 2010\Projects\CadastroDeCargo\binarios\LG.ProgramaDeEstagio.CadastroDeCargo.pdb
+C:\Users\lucas.sousa\Documents\Visual Studio 2010\Projects\CadastroDeCargo\LG.ProgramaDeEstagio.CadastroDeCargo\obj\Debug\LG.ProgramaDeEstagio.CadastroDeCargo.csprojResolveAssemblyReference.cache
+C:\Users\lucas.sousa\Documents\Visual Studio 2010\Projects\CadastroDeCargo\LG.ProgramaDeEstagio.CadastroDeCargo\obj\Debug\LG.ProgramaDeEstagio.CadastroDeCargo.dll
+C:\Users\lucas.sousa\Documents\Visual Studio 2010\Projects\CadastroDeCargo\LG.ProgramaDeEstagio.CadastroDeCargo\obj\Debug\LG.ProgramaDeEstagio.CadastroDeCargo.pdb
