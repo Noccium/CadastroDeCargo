@@ -17,15 +17,25 @@ namespace LG.ProgramaDeEstagio.CadastroDeCargo
         public void AssineRegraDescricaoTamanhoMinimo()
         {
             RuleFor(cargo => cargo.Descricao)
-                .DescricaoMinimaValida().WithMessage("Descrição do Cargo deve ter no mínimo 2 caracteres.");
+                .DescricaoMinimaValida(2).WithMessage("Descrição do Cargo deve ter no mínimo 2 caracteres.");
         }
 
         public void AssineRegraDescricaoTamanhoMaximo()
         {
             RuleFor(cargo => cargo.Descricao)
-                .DescricaoMaximaValida().WithMessage("Descrição do Cargo deve ter no máximo 100 caracteres.");
+                .DescricaoMaximaValida(100).WithMessage("Descrição do Cargo deve ter no máximo 100 caracteres.");
         }
 
+        public void AssineRegraCodigoTamanhoMinimo()
+        {
+            RuleFor(cargo => cargo.Codigo)
+                .CodigoMinimoValida(1).WithMessage("Codigo do Cargo deve ser maior ou igual a 1.");
+        }
 
+        public void AssineRegraCodigoTamanhoMaximo()
+        {
+            RuleFor(cargo => cargo.Codigo)
+                .CodigoMaximoValida(999999).WithMessage("Codigo do Cargo deve ser menor ou igual a 999999.");
+        }
     }
 }
