@@ -1,32 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\Users\lucas.sousa\Documents\Visual Studio 2010\Projects\CadastroDeCargo\binarios\LG.ProgramaDeEstagio.TesteCadastroDeCargo.dll" total="6" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2019-11-06" time="15:47:15">
+<test-results name="C:\Users\lucas.sousa\Documents\Visual Studio 2010\Projects\CadastroDeCargo\binarios\LG.ProgramaDeEstagio.TesteCadastroDeCargo.dll" total="1" errors="0" failures="1" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2019-11-07" time="09:24:57">
   <environment nunit-version="2.5.10.11092" clr-version="4.0.30319.36543" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Windows\system32" machine-name="PC-1688" user="lucas.sousa" user-domain="LG_DOMAIN" />
   <culture-info current-culture="pt-BR" current-uiculture="pt-BR" />
-  <test-suite type="Assembly" name="C:\Users\lucas.sousa\Documents\Visual Studio 2010\Projects\CadastroDeCargo\binarios\LG.ProgramaDeEstagio.TesteCadastroDeCargo.dll" executed="True" result="Success" success="True" time="0.200" asserts="0">
+  <test-suite type="Assembly" name="C:\Users\lucas.sousa\Documents\Visual Studio 2010\Projects\CadastroDeCargo\binarios\LG.ProgramaDeEstagio.TesteCadastroDeCargo.dll" executed="True" result="Failure" success="False" time="0.007" asserts="0">
     <results>
-      <test-suite type="Namespace" name="LG" executed="True" result="Success" success="True" time="0.190" asserts="0">
+      <test-suite type="Namespace" name="LG" executed="True" result="Failure" success="False" time="0.006" asserts="0">
         <results>
-          <test-suite type="Namespace" name="ProgramaDeEstagio" executed="True" result="Success" success="True" time="0.190" asserts="0">
+          <test-suite type="Namespace" name="ProgramaDeEstagio" executed="True" result="Failure" success="False" time="0.006" asserts="0">
             <results>
-              <test-suite type="Namespace" name="TesteCadastroDeCargo" executed="True" result="Success" success="True" time="0.190" asserts="0">
+              <test-suite type="Namespace" name="TesteCadastroDeCargo" executed="True" result="Failure" success="False" time="0.005" asserts="0">
                 <results>
-                  <test-suite type="TestFixture" name="TesteValidacoesCargo" executed="True" result="Success" success="True" time="0.190" asserts="0">
+                  <test-suite type="TestFixture" name="TesteValidacoesCargo" executed="True" result="Failure" success="False" time="0.005" asserts="0">
                     <results>
-                      <test-suite type="ParameterizedTest" name="TesteAssineRegraDescricaoObrigatoria" executed="True" result="Success" success="True" time="0.180" asserts="0">
+                      <test-suite type="ParameterizedTest" name="TesteAssineRegraDescricaoTamanhoMaximoValido" executed="True" result="Failure" success="False" time="0.004" asserts="0">
                         <results>
-                          <test-case name="LG.ProgramaDeEstagio.TesteCadastroDeCargo.TesteValidacoesCargo.TesteAssineRegraDescricaoObrigatoria(null)" executed="True" result="Success" success="True" time="0.170" asserts="4" />
-                          <test-case name="LG.ProgramaDeEstagio.TesteCadastroDeCargo.TesteValidacoesCargo.TesteAssineRegraDescricaoObrigatoria(&quot;&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="4" />
-                          <test-case name="LG.ProgramaDeEstagio.TesteCadastroDeCargo.TesteValidacoesCargo.TesteAssineRegraDescricaoObrigatoria(&quot; &quot;)" executed="True" result="Success" success="True" time="0.000" asserts="4" />
+                          <test-case name="LG.ProgramaDeEstagio.TesteCadastroDeCargo.TesteValidacoesCargo.TesteAssineRegraDescricaoTamanhoMaximoValido(100)" executed="True" result="Failure" success="False" time="0.002" asserts="1">
+                            <failure>
+                              <message><![CDATA[  Expected: 1
+  But was:  0
+]]></message>
+                              <stack-trace><![CDATA[em LG.ProgramaDeEstagio.TesteCadastroDeCargo.TesteValidacoesCargo.TesteAssineRegraDescricaoTamanhoMaximoValido(Int32 tamanhoDescricao) na C:\Users\lucas.sousa\Documents\Visual Studio 2010\Projects\CadastroDeCargo\LG.ProgramaDeEstagio.TesteCadastroDeCargo\TesteValidacoesCargo.cs:linha 142
+]]></stack-trace>
+                            </failure>
+                          </test-case>
                         </results>
                       </test-suite>
-                      <test-suite type="ParameterizedTest" name="TesteAssineRegraDescricaoTamanhoMinimo" executed="True" result="Success" success="True" time="0.010" asserts="0">
-                        <results>
-                          <test-case name="LG.ProgramaDeEstagio.TesteCadastroDeCargo.TesteValidacoesCargo.TesteAssineRegraDescricaoTamanhoMinimo(&quot;&quot;)" executed="True" result="Success" success="True" time="0.010" asserts="4" />
-                          <test-case name="LG.ProgramaDeEstagio.TesteCadastroDeCargo.TesteValidacoesCargo.TesteAssineRegraDescricaoTamanhoMinimo(&quot;D&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="4" />
-                        </results>
-                      </test-suite>
-                      <test-case name="LG.ProgramaDeEstagio.TesteCadastroDeCargo.TesteValidacoesCargo.TesteDescricaoFoiInformada" executed="True" result="Success" success="True" time="0.000" asserts="1" />
                     </results>
                   </test-suite>
                 </results>

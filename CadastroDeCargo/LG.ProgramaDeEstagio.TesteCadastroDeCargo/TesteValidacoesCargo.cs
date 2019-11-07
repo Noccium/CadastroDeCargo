@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using NUnit.Framework;
 using LG.ProgramaDeEstagio.CadastroDeCargo;
+using Rhino.Mocks;
 
 namespace LG.ProgramaDeEstagio.TesteCadastroDeCargo
 {
+    [TestFixture]
     public class TesteValidacoesCargo
     {
         [Test]
@@ -20,7 +22,7 @@ namespace LG.ProgramaDeEstagio.TesteCadastroDeCargo
                 Descricao = descricao
             };
 
-            var validadorDeCargo = new ValidadorDeCargo<Cargo>();
+            var validadorDeCargo = new ValidadorDeCargo<Cargo>(null);
 
             validadorDeCargo.AssineRegraDescricaoObrigatorio();
 
@@ -43,7 +45,7 @@ namespace LG.ProgramaDeEstagio.TesteCadastroDeCargo
                 Descricao = "Desenvolvedor"
             };
 
-            var validadorDeCargo = new ValidadorDeCargo<Cargo>();
+            var validadorDeCargo = new ValidadorDeCargo<Cargo>(null);
 
             validadorDeCargo.AssineRegraDescricaoObrigatorio();
 
@@ -53,8 +55,9 @@ namespace LG.ProgramaDeEstagio.TesteCadastroDeCargo
         }
 
         [Test]
-        [TestCase("")]
         [TestCase("D")]
+        [TestCase(" D")]
+        [TestCase("D ")]
         public void TesteAssineRegraDescricaoTamanhoMinimo(string descricao)
         {
             var cargo = new Cargo()
@@ -62,7 +65,7 @@ namespace LG.ProgramaDeEstagio.TesteCadastroDeCargo
                 Descricao = descricao
             };
 
-            var validadorDeCargo = new ValidadorDeCargo<Cargo>();
+            var validadorDeCargo = new ValidadorDeCargo<Cargo>(null);
 
             validadorDeCargo.AssineRegraDescricaoTamanhoMinimo();
 
@@ -75,19 +78,38 @@ namespace LG.ProgramaDeEstagio.TesteCadastroDeCargo
             Assert.AreEqual(
                 "Descricao",
                 resultado.Errors[0].PropertyName);
-        }   
+        }
 
         [Test]
+        [TestCase("De")]
+        [TestCase(null)]
         [TestCase("")]
-        [TestCase(RandomString(100))]
-        public void TesteAssineRegraDescricaoTamanhoMaximo(string descricao)
+        [TestCase(" ")]
+        public void TesteAssineRegraDescricaoTamanhoMinimoValido(string descricao)
         {
             var cargo = new Cargo()
             {
                 Descricao = descricao
             };
 
-            var validadorDeCargo = new ValidadorDeCargo<Cargo>();
+            var validadorDeCargo = new ValidadorDeCargo<Cargo>(null);
+
+            validadorDeCargo.AssineRegraDescricaoTamanhoMinimo();
+
+            var resultado = validadorDeCargo.Validate(cargo);
+
+            Assert.AreEqual(0, resultado.Errors.Count);
+        }
+
+        [Test]
+        public void TesteAssineRegraDescricaoTamanhoMaximo()
+        {
+            var cargo = new Cargo()
+            {
+                Descricao =new string('A', 101)
+            };
+
+            var validadorDeCargo = new ValidadorDeCargo<Cargo>(null);
 
             validadorDeCargo.AssineRegraDescricaoTamanhoMaximo();
 
@@ -104,14 +126,33 @@ namespace LG.ProgramaDeEstagio.TesteCadastroDeCargo
 
         [Test]
         [TestCase(0)]
+        [TestCase(100)]
+        public void TesteAssineRegraDescricaoTamanhoMaximoValido(int tamanhoDescricao)
+        {
+            var cargo = new Cargo()
+            {
+                Descricao = new string('A', tamanhoDescricao)
+            };
+
+            var validadorDeCargo = new ValidadorDeCargo<Cargo>(null);
+
+            validadorDeCargo.AssineRegraDescricaoTamanhoMaximo();
+
+            var resultado = validadorDeCargo.Validate(cargo);
+
+            Assert.AreEqual(0, resultado.Errors.Count);
+        }
+
+        [Test]
+        [TestCase(0)]
         public void TesteAssineRegraCodigoTamanhoMinimo(int codigo)
         {
-             var cargo = new Cargo()
+            var cargo = new Cargo()
             {
                 Codigo = codigo
             };
 
-            var validadorDeCargo = new ValidadorDeCargo<Cargo>();
+            var validadorDeCargo = new ValidadorDeCargo<Cargo>(null);
 
             validadorDeCargo.AssineRegraCodigoTamanhoMinimo();
 
@@ -128,14 +169,14 @@ namespace LG.ProgramaDeEstagio.TesteCadastroDeCargo
 
         [Test]
         [TestCase(1000000)]
-        public void TesteAssineRegraCodigoTamanhoMinimo(int codigo)
+        public void TesteAssineRegraCodigoTamanhoMaximo(int codigo)
         {
-             var cargo = new Cargo()
+            var cargo = new Cargo()
             {
                 Codigo = codigo
             };
 
-            var validadorDeCargo = new ValidadorDeCargo<Cargo>();
+            var validadorDeCargo = new ValidadorDeCargo<Cargo>(null);
 
             validadorDeCargo.AssineRegraCodigoTamanhoMaximo();
 
@@ -150,12 +191,60 @@ namespace LG.ProgramaDeEstagio.TesteCadastroDeCargo
                 resultado.Errors[0].PropertyName);
         }
 
-        private static Random random = new Random();
-        private static string RandomString(int length)
+
+        [Test]
+        public void TesteAssineRegraCargoJacadastrado()
         {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            return new string(Enumerable.Repeat(chars, length)
-                            .Select(s => s[random.Next(s.Length)]).ToArray());
+            var cargo = new Cargo();
+
+            var mockRepositorio = new MockRepository(); // DLL 
+
+            var repositorio = mockRepositorio.StrictMock<IRepositorioCargo>();
+
+            using (mockRepositorio.Record())
+            {
+                repositorio.Consulte(1);
+                LastCall.Return(new Cargo());
+                LastCall.IgnoreArguments();
+            }
+
+            var validadorDeCargo = new ValidadorDeCargo<Cargo>(repositorio);
+
+            validadorDeCargo.AssineRegraCargoJaCadastrado();
+
+            var resultado = validadorDeCargo.Validate(cargo);
+
+            Assert.AreEqual(1, resultado.Errors.Count);
+            Assert.AreEqual(
+                "Cargo já cadastrado.",
+                resultado.Errors[0].ErrorMessage);
+            Assert.AreEqual(
+                "Codigo",
+                resultado.Errors[0].PropertyName);
         }
+
+        [Test]
+        public void TesteAssineRegraCargoNaoCadastrado()
+        {
+            var cargo = new Cargo();
+
+            var mockRepositorio = new MockRepository(); // DLL 
+
+            var repositorio = mockRepositorio.StrictMock<IRepositorioCargo>();
+
+            using (mockRepositorio.Record())
+            {
+                repositorio.Consulte(0);
+                LastCall.Return(null);
+                LastCall.IgnoreArguments();
+            }
+            var validadorDeCargo = new ValidadorDeCargo<Cargo>(repositorio);
+
+            validadorDeCargo.AssineRegraCargoJaCadastrado();
+
+            var resultado = validadorDeCargo.Validate(cargo);
+
+            Assert.AreEqual(0, resultado.Errors.Count);
+        }   
     }
 }

@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cargo.cs" />
+    <Compile Include="IRepositorioCargo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidadorDeCargo.cs" />
     <Compile Include="ValidadorDeCargoCascadeExtensions.cs" />

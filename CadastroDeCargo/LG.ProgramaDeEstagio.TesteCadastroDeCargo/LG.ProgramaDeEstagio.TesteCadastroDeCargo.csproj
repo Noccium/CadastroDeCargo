@@ -37,6 +37,10 @@
     <Reference Include="nunit.framework">
       <HintPath>..\..\LG.ProgramaDeEstagio.Negocio\binarios\nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\binarios\Rhino.Mocks.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,6 +52,7 @@
   <ItemGroup>
     <Compile Include="TesteValidacoesCargo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Uteis.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LG.ProgramaDeEstagio.CadastroDeCargo\LG.ProgramaDeEstagio.CadastroDeCargo.csproj">
