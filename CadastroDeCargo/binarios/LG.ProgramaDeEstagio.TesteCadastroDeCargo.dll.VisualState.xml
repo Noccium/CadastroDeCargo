@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
-  <TopNode>[0-1023]C:\Users\lucas.sousa\Documents\Visual Studio 2010\Projects\CadastroDeCargo\binarios\LG.ProgramaDeEstagio.TesteCadastroDeCargo.dll</TopNode>
-  <SelectedNode>[0-1017]LG.ProgramaDeEstagio.TesteCadastroDeCargo.TesteValidacoesCargo.TesteAssineRegraDescricaoTamanhoMaximoValido(100)</SelectedNode>
+  <TopNode>[0-1059]C:\Users\lucas.sousa\Documents\Visual Studio 2010\Projects\CadastroDeCargo\binarios\LG.ProgramaDeEstagio.TesteCadastroDeCargo.dll</TopNode>
+  <SelectedNode>[0-1025]LG.ProgramaDeEstagio.TesteCadastroDeCargo.TesteValidacoesPessoa</SelectedNode>
   <ExcludeCategories>false</ExcludeCategories>
   <Nodes>
-    <Node UniqueName="[0-1023]C:\Users\lucas.sousa\Documents\Visual Studio 2010\Projects\CadastroDeCargo\binarios\LG.ProgramaDeEstagio.TesteCadastroDeCargo.dll" Expanded="true" />
-    <Node UniqueName="[0-1024]LG" Expanded="true" />
-    <Node UniqueName="[0-1025]LG.ProgramaDeEstagio" Expanded="true" />
-    <Node UniqueName="[0-1026]LG.ProgramaDeEstagio.TesteCadastroDeCargo" Expanded="true" />
+    <Node UniqueName="[0-1059]C:\Users\lucas.sousa\Documents\Visual Studio 2010\Projects\CadastroDeCargo\binarios\LG.ProgramaDeEstagio.TesteCadastroDeCargo.dll" Expanded="true" />
+    <Node UniqueName="[0-1060]LG" Expanded="true" />
+    <Node UniqueName="[0-1061]LG.ProgramaDeEstagio" Expanded="true" />
+    <Node UniqueName="[0-1062]LG.ProgramaDeEstagio.TesteCadastroDeCargo" Expanded="true" />
     <Node UniqueName="[0-1000]LG.ProgramaDeEstagio.TesteCadastroDeCargo.TesteValidacoesCargo" Expanded="true" />
     <Node UniqueName="[0-1021]LG.ProgramaDeEstagio.TesteCadastroDeCargo.TesteValidacoesCargo.TesteAssineRegraCodigoTamanhoMaximo" Expanded="true" />
     <Node UniqueName="[0-1019]LG.ProgramaDeEstagio.TesteCadastroDeCargo.TesteValidacoesCargo.TesteAssineRegraCodigoTamanhoMinimo" Expanded="true" />

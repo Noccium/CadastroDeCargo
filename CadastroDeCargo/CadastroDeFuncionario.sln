@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LG.ProgramaDeEstagio.CadastroDeFuncionario", "LG.ProgramaDeEstagio.CadastroDeCargo\LG.ProgramaDeEstagio.CadastroDeFuncionario.csproj", "{D991A7DD-47EA-40BA-A219-B969CA31E36F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LG.ProgramaDeEstagio.TesteCadastroDeFuncionario", "LG.ProgramaDeEstagio.TesteCadastroDeCargo\LG.ProgramaDeEstagio.TesteCadastroDeFuncionario.csproj", "{51966871-7C2C-48E2-88DC-EE9DBDAFFA54}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D991A7DD-47EA-40BA-A219-B969CA31E36F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D991A7DD-47EA-40BA-A219-B969CA31E36F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D991A7DD-47EA-40BA-A219-B969CA31E36F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D991A7DD-47EA-40BA-A219-B969CA31E36F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51966871-7C2C-48E2-88DC-EE9DBDAFFA54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51966871-7C2C-48E2-88DC-EE9DBDAFFA54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51966871-7C2C-48E2-88DC-EE9DBDAFFA54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51966871-7C2C-48E2-88DC-EE9DBDAFFA54}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
